@@ -1,5 +1,8 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.io.*;
+import java.io.IOException;
+
 public class Demo_1_1_11 {
     public Demo_1_1_11(){
 
@@ -36,24 +39,54 @@ public class Demo_1_1_11 {
         }
        return a;
     }
-    public static void main(String[] args){
-            int[][] a = initial(3,5);
-            print_the_array(a);
-            int[][] a_transfer = change(a);
-            print_the_array(a_transfer);
+    public static int[] histogram(int[] a,int M){     //Chapter1 1.1.15
+        int[] b = new int[M];
 
-            int[] b = new int[10];               //Chapter1 1.1.12
-            for (int i=0;i<10;i++){
-               b[i] = 9-i;
-                System.out.print(b[i]);
+        for (int i=0;i<M;i++){
+            int temp = 0;
+            for (int j=0;j<a.length;j++){
+                if (i == a[j]){
+                    temp += 1;
+                    b[i] = temp;
+                }
             }
-            for (int i=0;i<10;i++){
-                b[i] = b[b[i]];
-                System.out.print(b[i]);
-            }
-            for (int i=0;i<10;i++){
-                System.out.print(b[i]);
-            }
+        }
+        return b;
     }
+    public static String exR1(int n){            //Chapter1 1.1.16
+        if (n<=0){return "";}
+        return exR1(n-3)+n+exR1(n-2)+n;
+    }
+    public static void main(String[] args){
+//            int[][] a = initial(3,5);
+//            print_the_array(a);
+//            int[][] a_transfer = change(a);
+//            print_the_array(a_transfer);
+//
+//            int[] b = new int[10];               //Chapter1 1.1.12
+//            for (int i=0;i<10;i++){
+//               b[i] = 9-i;
+//                System.out.print(b[i]);
+//            }
+//            for (int i=0;i<10;i++){
+//                b[i] = b[b[i]];
+//                System.out.print(b[i]);
+//            }
+//            for (int i=0;i<10;i++){
+//                System.out.print(b[i]);
+//            }
+
+        int[] a = {0,0,2,0,1};
+        System.out.println(a[0]);
+        int M = 5;
+        int[] b = histogram(a,M);
+        for (int i=0;i<b.length;i++){
+            System.out.print(b[i]);
+        }
+        System.out.println();
+        System.out.print(exR1(6));
+
+    }
+
 
 }
