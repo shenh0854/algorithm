@@ -24,30 +24,23 @@ public class BinarySearch {
         return indexOf(a, key);
     }
     public static void main(String[] args) {
-
-        // read the integers from a file
+        
         Scanner x=new Scanner(System.in);
-        while(x.hasNext()){
-        int m=x.nextInt();
-         //System.out.println(m);
-        int[] number=new int[m];
-        for(int i=0;i<m;i++){
-             number[i]=x.nextInt();
+        System.out.println("please input your array:");
+        String inputString=x.next().toString();
+        String stringArray[]=inputString.split(",");
+        int num[]=new int[stringArray.length];
+        for(int i=0;i<stringArray.length;i++) {
+            num[i] = Integer.parseInt(stringArray[i]);
+            System.out.print(num[i] + " ");
         }
-        // Arrays.sort(number);
-        System.out.println(Arrays.toString(number));
-     	}
-     	
-        // int[] whitelist = ;
-
-        // // sort the array
-        // Arrays.sort(whitelist);
-
-        // // read integer key from standard input; print if not in whitelist
-        // while (!StdIn.isEmpty()) {
-        //     int key = StdIn.readInt();
-        //     if (BinarySearch.indexOf(whitelist, key) == -1)
-        //         System.out.println(key);
-        // }
+        System.out.println();
+        Scanner k=new Scanner(System.in);
+        System.out.println("please input your key for binarysearch:");
+        String inputkey=k.next().toString();
+        int key_num =  Integer.parseInt(inputkey);
+        if (BinarySearch.indexOf(num, key_num) != -1){
+            System.out.println(key_num);
+        }
     }
 }
