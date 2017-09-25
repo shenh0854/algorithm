@@ -24,7 +24,7 @@ public class BinarySearch {
         return indexOf(a, key);
     }
     public static void main(String[] args) {
-        
+
         Scanner x=new Scanner(System.in);
         System.out.println("please input your array:");
         String inputString=x.next().toString();
@@ -39,6 +39,7 @@ public class BinarySearch {
         System.out.println("please input your key for binarysearch:");
         String inputkey=k.next().toString();
         int key_num =  Integer.parseInt(inputkey);
+        Arrays.sort(num);
         if (BinarySearch.indexOf(num, key_num) != -1){
             System.out.println(key_num);
         }
