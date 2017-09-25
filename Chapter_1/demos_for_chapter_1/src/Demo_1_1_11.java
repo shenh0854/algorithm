@@ -22,7 +22,13 @@ public class Demo_1_1_11 {
         }
         return myArray;
     }
-    public static void print_the_array(int[][] x){
+    public static void print_the_array(int[] x){      //print 1d array
+        for (int i=0;i<x.length;i++) {
+            System.out.print(x[i]+" ");
+        }
+        System.out.println();
+    }
+    public static void print_the_2_array(int[][] x){   // print 2d array
         for (int i=0;i<x.length;i++){
             for (int j=0;j<x[i].length;j++){
                 System.out.print(x[i][j]);
@@ -57,6 +63,20 @@ public class Demo_1_1_11 {
         if (n<=0){return "";}
         return exR1(n-3)+n+exR1(n-2)+n;
     }
+    public static int[] ordering(int[] a){         //ordering_1
+        int[] b = new int[a.length];
+        for (int i=0;i<a.length-1;i++) {
+            for (int j=0;j<a.length-i-1;j++) {
+                if (a[j]>a[j+1]) {
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }    
+            }  
+        }
+        b = a;
+        return b;
+    }
     public static void main(String[] args){
 //            int[][] a = initial(3,5);
 //            print_the_array(a);
@@ -66,7 +86,7 @@ public class Demo_1_1_11 {
 //            int[] b = new int[10];               //Chapter1 1.1.12
 //            for (int i=0;i<10;i++){
 //               b[i] = 9-i;
-//                System.out.print(b[i]);
+//                System.out.print(b[i]);,"encoding":"cp1252"
 //            }
 //            for (int i=0;i<10;i++){
 //                b[i] = b[b[i]];
@@ -76,15 +96,19 @@ public class Demo_1_1_11 {
 //                System.out.print(b[i]);
 //            }
 
-        int[] a = {0,0,2,0,1};
-        System.out.println(a[0]);
-        int M = 5;
-        int[] b = histogram(a,M);
-        for (int i=0;i<b.length;i++){
-            System.out.print(b[i]);
-        }
-        System.out.println();
-        System.out.print(exR1(6));
+        int[] a = {3,0,2,6,1,98,166};
+        print_the_array(a);
+        int[] b = ordering(a);
+        print_the_array(b);
+
+        // System.out.println(a[0]);
+        // int M = 5;
+        // int[] b = histogram(a,M);
+        // for (int i=0;i<b.length;i++){
+        //     System.out.print(b[i]);
+        // }
+        // System.out.println();
+        // System.out.print(exR1(6));
 
     }
 
