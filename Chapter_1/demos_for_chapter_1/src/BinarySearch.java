@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class BinarySearch {
-	 private BinarySearch() { 
+	 public BinarySearch() {
 
 	 }
 	 public static int indexOf(int[] a, int key) {
