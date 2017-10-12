@@ -23,6 +23,7 @@ public class BinarySearch {
     public static int rank(int key, int[] a) {
         return indexOf(a, key);
     }
+    
     public static void main(String[] args) {
 
         Scanner x=new Scanner(System.in);

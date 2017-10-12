@@ -2,6 +2,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.io.*;
 import java.io.IOException;
+import java.lang.*;
+
 
 public class Demo_1_1_11 {
     public Demo_1_1_11(){
@@ -78,7 +80,7 @@ public class Demo_1_1_11 {
         return b;
     }
     public static int Euclid(int a,int b){          
-        int e = 0;
+        
         if (a<b) {
             int temp = a;
             a = b;
@@ -110,17 +112,17 @@ public class Demo_1_1_11 {
 //            for (int i=0;i<10;i++){
 //                System.out.print(b[i]);
 //            }
-
-        int[] a = {3,0,2,6,1,98,166};
-        print_the_array(a);
-        int[] b = ordering(a);
-        print_the_array(b);
-        int num = Euclid(12,9);
-        System.out.println(num);
-        int x = 1111111;
-        int y = 1234567;
-        int result = Euclid(x,y);
-        System.out.println(result);
+//        int[] p;
+//        int[] a = {3,0,2,6,1,98,166};
+//        print_the_array(a);
+//        int[] b = ordering(a);
+//        print_the_array(b);
+//        int num = Euclid(12,9);
+//        System.out.println(num);
+//        int x = 1111111;
+//        int y = 1234567;
+//        int result = Euclid(x,y);
+//        System.out.println(result);
         // System.out.println(a[0]);
         // int M = 5;
         // int[] b = histogram(a,M);
@@ -129,6 +131,9 @@ public class Demo_1_1_11 {
         // }
         // System.out.println();
         // System.out.print(exR1(6));
+        int[] a = new int[6];
+        print_the_array(a);
+        String s = StdIn.readLine();
 
     }
 
